@@ -47,12 +47,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        medical: {
-          blue: "hsl(var(--medical-blue))",
-          "blue-light": "hsl(var(--medical-blue-light))",
-          mint: "hsl(var(--medical-mint))",
-          "mint-dark": "hsl(var(--medical-mint-dark))",
-        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -63,19 +57,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-      },
-      backgroundImage: {
-        "trust-gradient": "var(--trust-gradient)",
-        "soft-gradient": "var(--soft-gradient)",
-        "hero-gradient": "var(--hero-gradient)",
-      },
-      boxShadow: {
-        "medical": "var(--shadow-medical)",
-        "card-soft": "var(--shadow-card)",
-      },
-      fontFamily: {
-        "medical": ["Inter", "system-ui", "sans-serif"],
-        "heading": ["Poppins", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
