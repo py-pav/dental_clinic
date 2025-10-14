@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAccessibility } from "./AccessibilityContext";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
+  const { isAccessibilityMode } = useAccessibility();
 
   const scrollToSection = (sectionId: string) => {
   if (location.pathname !== "/") {
@@ -42,10 +44,11 @@ const Navigation = () => {
     { name: "Сертификаты", path: "/certificates" },
     { name: "Лицензии", path: "/licenses" },
     { name: "Контакты", path: "/contacts" },
+    { name: "Отзывы", path: "/job_reviews" },
   ];
 
   return (
-    <nav className="sticky top-[73px] md:top-[73px] z-40 bg-primary text-primary-foreground shadow-md">
+    <nav className={`sticky top-[73px] md:top-[73px] z-40 bg-primary text-primary-foreground shadow-md ${isAccessibilityMode ? 'accessibility-mode' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between md:justify-center">
           <button
@@ -56,10 +59,9 @@ const Navigation = () => {
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
-          <ul className={cn(
-  "md:flex md:items-center md:gap-6 absolute md:relative top-full left-0 w-full md:w-auto bg-primary md:bg-transparent shadow-md md:shadow-none",
-  isMobileMenuOpen ? "block" : "hidden"
-)}>
+          <ul className={cn("md:flex md:items-center md:gap-6 absolute md:relative top-full left-0 w-full md:w-auto bg-primary md:bg-transparent shadow-md md:shadow-none",
+                        isMobileMenuOpen ? "block" : "hidden"
+            )}>
             {menuItems.map((item) => (
               <li key={item.name} className="relative group">
                 {item.hasSubmenu ? (

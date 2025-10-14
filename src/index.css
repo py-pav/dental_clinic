@@ -111,3 +111,100 @@
     @apply transition-transform duration-500 ease-in-out;
   }
 }
+
+/* Режим для слабовидящих */
+.accessibility-mode * {
+  background: white !important;
+  color: black !important;
+  border-color: black !important;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+
+.accessibility-mode p,
+.accessibility-mode span,
+.accessibility-mode div:not(h2):not(h1):not(h3):not(h4):not(h5):not(h6),
+.accessibility-mode li {
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+
+.accessibility-mode img {
+  display: none !important;
+}
+
+.accessibility-mode .bg-cover,
+.accessibility-mode .bg-gradient-to-r,
+.accessibility-mode [class*="bg-"]:not(.bg-white):not(.bg-card) {
+  background: white !important;
+}
+
+.accessibility-mode .text-white,
+.accessibility-mode .text-primary-foreground,
+.accessibility-mode .text-muted-foreground {
+  color: black !important;
+}
+
+.accessibility-mode .hover\\:text-primary:hover,
+.accessibility-mode .hover\\:text-green-600:hover,
+.accessibility-mode .hover\\:text-blue-500:hover {
+  color: #0000EE !important; /* Синий цвет для ссылок */
+  text-decoration: underline !important;
+}
+
+.accessibility-mode .shadow-md,
+.accessibility-mode .shadow-sm,
+.accessibility-mode .shadow-lg {
+  box-shadow: 0 0 0 1px black !important;
+}
+
+.accessibility-mode button,
+.accessibility-mode a {
+  border: 0px solid black !important;
+  padding: 1px 1px !important;
+  margin: 0 !important;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+
+/* Улучшаем контрастность для карточек */
+.accessibility-mode .bg-card {
+  background: white !important;
+  border: 2px solid black !important;
+}
+
+.accessibility-mode .bg-background {
+  background: white !important;
+}
+
+.accessibility-mode .bg-accent {
+  background: #f0f0f0 !important;
+}
+
+/* Убираем градиенты и прозрачности */
+.accessibility-mode .from-black,
+.accessibility-mode .to-transparent,
+.accessibility-mode .bg-gradient-to-t {
+  background: transparent !important;
+}
+
+.accessibility-mode .absolute.inset-0 {
+  position: static !important;
+}
+.accessibility-mode .gap-1,
+.accessibility-mode .gap-2,
+.accessibility-mode .gap-3,
+.accessibility-mode .gap-4 {
+  gap: 0 !important;
+}
+
+.accessibility-mode .flex > * {
+  margin: 0 1px !important;
+}
+
+.accessibility-mode h2 {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
+  margin-bottom: 0rem !important;
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+}

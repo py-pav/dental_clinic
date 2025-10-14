@@ -24,7 +24,6 @@ const Licenses = () => {
                 <div className="bg-card p-8 w-[240px] h-[300px] flex flex-col items-center justify-center space-y-4">
                   <div className="text-6xl">📄</div>
                   <p className="text-center font-semibold">Лицензия №Л041-01197-26/02869397 на осуществление медицинской деятельности</p>
-
                   <p className="text-xs text-muted-foreground">Скачать PDF</p>
                 </div>
               </div>
@@ -34,12 +33,10 @@ const Licenses = () => {
           <div className="pt-6 border-t">
             <a
               href="https://roszdravnadzor.gov.ru/services/licenses?qrguid=195d06487318a95d586b8956e599fbab"
-              target="_blank"
-              rel="noopener noreferrer"
+              target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 text-primary hover:underline font-medium"
             >
-              <ExternalLink className="h-5 w-5" />
-              Лицензия на сайте Федеральной Службы по надзору в сфере здравоохранения
+              <ExternalLink className="h-5 w-5" />Лицензия на сайте Федеральной Службы по надзору в сфере здравоохранения
             </a>
           </div>
         </Card>

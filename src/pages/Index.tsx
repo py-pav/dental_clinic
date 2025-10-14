@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Carousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import { useAccessibility } from "@/components/AccessibilityContext";
 import heroImage from "@/assets/hero-dental.jpg";
 import logoImage from "@/assets/logo-image.png";
 import clinicInterior1 from "@/assets/clinic-interior-1.jpg";
@@ -23,6 +24,7 @@ import doctor3 from "@/assets/doctor-3.jpg";
 
 const Index = () => {
   const location = useLocation();
+  const { isAccessibilityMode } = useAccessibility();
   // Функция для прокрутки к секции
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -136,6 +138,7 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
+    {!isAccessibilityMode &&
     <section className="relative h-[20vh] md:h-[20vh] flex items-center justify-start">
       <div className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}>
@@ -145,12 +148,15 @@ const Index = () => {
         <img src={logoImage} alt="Логотип" className="h-20 w-auto" />
       </div>
     </section>
+    }
 
       {/* About Section */}
-      <section id="about" className="py-5 bg-background">
+      <section id="about" className={isAccessibilityMode ? 'accessibility-mode' : 'py-5 bg-background'}>
         <div className="container mx-auto px-4">
-          <h2 className="section-title">О клинике</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+
+          <h2 className={isAccessibilityMode ? 'accessibility-mode' : 'section-title'}>О клинике</h2>
+          <div className={`grid md:grid-cols-${isAccessibilityMode ? '1' : '2'} gap-8 items-start`}>
+            {!isAccessibilityMode &&
             <div className="h-[400px]">
               <Carousel
                 items={clinicImages.map((img, idx) => (
@@ -162,10 +168,11 @@ const Index = () => {
                   />
                 ))}
                 autoPlay
-                interval={60000}
+                interval={10000}
               />
             </div>
-            <div className="space-y-4">
+            }
+            <div className='space-y-4'>
               <p className="text-lg leading-relaxed">
                 Стоматология <strong>Эстерио</strong> - это пространство современного подхода к
                 здоровью зубов, основанное на передовых технологиях и опыте профессионалов
@@ -188,7 +195,7 @@ const Index = () => {
             {whyChooseUs.map((item) => (
               <Card key={item.id} className="p-6 hover:shadow-xl transition-shadow h-full">
                 <div className="space-y-3">
-                  <h3 className="text-xl font-bold text-primary">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-center">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               </Card>
@@ -199,8 +206,8 @@ const Index = () => {
               items={whyChooseUs.map((item) => (
                 <Card key={item.id} className="p-6 mx-2 h-full">
                   <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-primary">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-bold text-center">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed ml-5 mr-5">{item.description}</p>
                   </div>
                 </Card>
               ))}
