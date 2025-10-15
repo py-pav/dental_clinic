@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import Carousel from "@/components/Carousel";
 import { useEffect, useState } from "react";
 import serviceTherapy from "@/assets/service-therapy.jpg";
+import serviceTherapy2 from "@/assets/service-therapy-2.jpg";
+import serviceTherapy3 from "@/assets/service-therapy-3.jpg";
 import serviceHygiene from "@/assets/service-hygiene.jpg";
 import serviceImplant from "@/assets/service-implant.jpg";
 import serviceProsthetics from "@/assets/service-prosthetics.jpg";
@@ -14,7 +17,7 @@ const ServicePage = () => {
   const services: Record<string, { name: string; image: string; description: string; features: string[] }> = {
     therapy: {
       name: "Терапия",
-      image: serviceTherapy,
+      image: [serviceTherapy, serviceTherapy2, serviceTherapy3],
       description:
         "В клинике Эстерио мы предлагаем комплексное лечение кариеса, основанное на использовании максимально безопасной анестезии для комфорта пациента. Для обеспечения высокой точности и чистоты работы применяется система изоляции рабочего поля (коффердам), которая предотвращает попадание слюны и обеспечивает стерильность процедуры. В процессе лечения мы работаем под увеличением, что позволяет максимально точно удалить поврежденные ткани и сохранить здоровые участки зуба. Используем современные пломбировочные материалы и современное оборудование, что гарантирует долговечность и надежность реставрации. После удаления кариеса мы восстанавливаем анатомическую форму зуба, обеспечивая его естественный внешний вид. В случае необходимости выполняется эстетическая реставрация, которая делает улыбку красивой и гармоничной.",
       stages: "Этапы лечения:",
@@ -85,19 +88,44 @@ const ServicePage = () => {
     );
   }
 
+  // Функция для рендеринга изображения в зависимости от типа
+  const renderImage = () => {
+    if (Array.isArray(service.image)) {
+      // Если image - массив, отображаем карусель
+      return (
+         <Carousel
+        items={service.image.map((img, index) => (
+          <div key={index} className="flex-[0_0_100%]">
+            <img
+              src={img}
+              alt={`${service.name} - изображение ${index + 1}`}
+              className="w-full h-[400px] object-cover"
+            />
+          </div>
+        ))}
+      />
+    );
+    } else {
+      // Если image - строка, отображаем карточку
+      return (
+        <Card className="overflow-hidden">
+          <img
+            src={service.image}
+            alt={service.name}
+            className="w-full h-[400px] object-cover"
+          />
+        </Card>
+      );
+    }
+  };
+
   return (
     <div className="py-5">
       <div className="container mx-auto px-4">
         <h1 className="section-title">{service.name}</h1>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <Card className="overflow-hidden">
-            <img
-              src={service.image}
-              alt={service.name}
-              className="w-full h-[400px] object-cover"
-            />
-          </Card>
+          {renderImage()}
 
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">{service.description}</p>
