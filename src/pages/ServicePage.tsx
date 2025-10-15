@@ -8,13 +8,22 @@ import serviceTherapy3 from "@/assets/service-therapy-3.jpg";
 import serviceHygiene from "@/assets/service-hygiene.jpg";
 import serviceImplant from "@/assets/service-implant.jpg";
 import serviceProsthetics from "@/assets/service-prosthetics.jpg";
+import serviceProsthetics2 from "@/assets/service-prosthetics-2.jpg";
+import serviceProsthetics3 from "@/assets/service-prosthetics-3.jpg";
+import serviceProsthetics4 from "@/assets/service-prosthetics-4.jpg";
 
 const ServicePage = () => {
   const { serviceId } = useParams();
   const [isStageOpen, setIsStageOpen] = useState(false);
   useEffect(() => {window.scrollTo(0, 0);}, [serviceId]);
 
-  const services: Record<string, { name: string; image: string; description: string; features: string[] }> = {
+  const services: Record<string, {
+    name: string;
+    image: string | string[];
+    description: string;
+    features: string[];
+    stages: string;
+  }> = {
     therapy: {
       name: "Терапия",
       image: [serviceTherapy, serviceTherapy2, serviceTherapy3],
@@ -61,7 +70,7 @@ const ServicePage = () => {
     },
     prosthetics: {
       name: "Протезирование",
-      image: serviceProsthetics,
+      image: [serviceProsthetics, serviceProsthetics2, serviceProsthetics3, serviceProsthetics4],
       description:
         "В клинике Эстерио мы применяем полностью цифровой подход к протезированию, что обеспечивает исключительную точность исполнения каждой конструкции. Использование самого лучшего и точного внутриротового сканера Prime Scan позволяет создать высокоточные модели и протезы, идеально соответствующие анатомии пациента. Мы активно применяем безметалловые конструкции, такие как диоксид циркония и прессованная керамика, что обеспечивает превосходную эстетику и долговечность. В нашем арсенале — современное оборудование и материалы, позволяющие создавать виниры, коронки и другие протезы высокого качества. Такой подход гарантирует надежность, естественный внешний вид и комфорт при ношении, а также долгий срок службы восстановленных зубов.",
       stages: "Этапы протезирования одиночными коронками и мостовидными протезами:",
@@ -88,13 +97,24 @@ const ServicePage = () => {
     );
   }
 
+  // Добавляем состояние для текущего слайда
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Сбрасываем на первый слайд при изменении услуги
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [serviceId]);
+
   // Функция для рендеринга изображения в зависимости от типа
   const renderImage = () => {
     if (Array.isArray(service.image)) {
       // Если image - массив, отображаем карусель
       return (
          <Carousel
-        items={service.image.map((img, index) => (
+         key={`carousel-${serviceId}`}
+         currentSlide={currentSlide}
+         onSlideChange={setCurrentSlide}
+         items={service.image.map((img, index) => (
           <div key={index} className="flex-[0_0_100%]">
             <img
               src={img}
