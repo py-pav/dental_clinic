@@ -4,11 +4,15 @@ import job_reviews2 from "@/assets/job-reviews-2.jpg";
 import job_reviews3 from "@/assets/job-reviews-3.jpg";
 import job_reviews4 from "@/assets/job-reviews-4.jpg";
 import job_reviews5 from "@/assets/job-reviews-5.jpg";
+import job_reviews6 from "@/assets/job-reviews-6.jpg";
+import job_reviews7 from "@/assets/job-reviews-7.jpg";
+import job_reviews8 from "@/assets/job-reviews-8.jpg";
+import job_reviews9 from "@/assets/job-reviews-9.jpg";
 import { useEffect } from "react";
 
 const JobReviews = () => {
     useEffect(() => {window.scrollTo(0, 0);}, []);
-    const job_reviews = [job_reviews1, job_reviews2, job_reviews3, job_reviews4, job_reviews5];
+    const job_reviews = [job_reviews1, job_reviews2, job_reviews3, job_reviews4, job_reviews5, job_reviews6, job_reviews7, job_reviews8, job_reviews9];
 
   return (
     <div className="py-5">
