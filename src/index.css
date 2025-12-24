@@ -113,12 +113,25 @@
 }
 
 /* Режим для слабовидящих */
-.accessibility-mode * {
+.accessibility-mode {
   background: white !important;
   color: black !important;
   border-color: black !important;
   font-weight: bold !important;
   font-size: 1.1em !important;
+}
+
+.accessibility-mode * {
+  background: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
+
+.accessibility-mode nav ul ul,
+.accessibility-mode nav ul ul * {
+  font-size: 1em !important;
 }
 
 .accessibility-mode p,
@@ -167,6 +180,27 @@
   font-size: 1.1em !important;
 }
 
+.accessibility-mode nav {
+  background: white !important;
+  border: none !important;
+}
+
+.accessibility-mode .bg-primary {
+  background: white !important;
+}
+
+.accessibility-mode nav ul,
+.accessibility-mode nav li {
+  background: white !important;
+}
+
+.accessibility-mode nav ul ul li a {
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+}
+
+
+
 /* Улучшаем контрастность для карточек */
 .accessibility-mode .bg-card {
   background: white !important;
@@ -207,4 +241,8 @@
   margin-bottom: 0rem !important;
   font-size: 1.1em !important;
   font-weight: bold !important;
+}
+
+.flex.items-center.justify-between.md\\:justify-center > .md\\:hidden {
+  margin-left: auto;
 }

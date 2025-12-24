@@ -18,9 +18,9 @@ const Header = () => {
               {!isAccessibilityMode && (
                 <img src={toothLogo} alt="Эстерио логотип" className="h-12 w-12 flex-shrink-0" />
               )}
-              <div className="hidden md:block min-w-0 flex-1">
-                <p className="text-sm text-muted-foreground truncate"><strong>Адрес:</strong> г.Ставрополь, улица Мира, 460/3</p>
-                <p className="text-sm text-muted-foreground truncate"><strong>Режим работы:</strong> Пн-Пт 09:00-20:00, Сб 10:00-16:00, Вс 10:00-14:00</p>
+              <div className="hidden md:block min-w-0 flex-1 space-y-1">
+               <p className="text-sm text-muted-foreground leading-tight"><strong>Адрес:</strong> г.Ставрополь, улица Мира, 460/3</p>
+               <p className="text-sm text-muted-foreground leading-tight"><strong>Режим работы:</strong> Пн-Пт 09:00-20:00, Сб 10:00-16:00, Вс 10:00-14:00</p>
               </div>
             </div>
 
