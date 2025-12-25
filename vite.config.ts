@@ -11,7 +11,16 @@ export default defineConfig(({ mode }) => ({
       'esterio-stom.ru',
       'www.esterio-stom.ru',
       '92.51.23.53'
-    ]
+    ],
+    fs: {
+      strict: true,
+      allow: [
+        '.',
+        './src',
+        './public',
+        './node_modules',
+      ]
+    }
   },
   plugins: [react()].filter(Boolean),
   resolve: {
