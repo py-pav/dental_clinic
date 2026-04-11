@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 
 
 const Licenses = () => {
@@ -41,6 +42,7 @@ const Licenses = () => {
           </div>
         </Card>
       </div>
+      <FloatingPhoneButton />
     </div>
   );
 };

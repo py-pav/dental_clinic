@@ -3,7 +3,7 @@ import { useState } from "react";
 import toothLogo from "@/assets/tooth-logo.png";
 import CallbackModal from "./CallbackModal";
 import { useAccessibility } from "./AccessibilityContext";
-
+import logoImage from "@/assets/logo-image.png";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,13 +12,14 @@ const Header = () => {
   return (
     <>
       <header className={`sticky top-0 z-50 bg-card border-b border-border shadow-sm will-change-transform h-[73px] md:h-[73px] ${isAccessibilityMode ? 'accessibility-mode' : ''}`}>
-        <div className="container mx-auto px-4 h-full">
+
+        <div className="hidden md:block container mx-auto px-4 h-full">
           <div className="flex items-center justify-between gap-4 h-full">
             <div className="flex items-center gap-4 min-w-0 flex-1">
               {!isAccessibilityMode && (
                 <img src={toothLogo} alt="Эстерио логотип" className="h-12 w-12 flex-shrink-0" />
               )}
-              <div className="hidden md:block min-w-0 flex-1 space-y-1">
+              <div className="min-w-0 flex-1 space-y-1">
                <p className="text-sm text-muted-foreground leading-tight"><strong>Адрес:</strong> г.Ставрополь, улица Мира, 460/3</p>
                <p className="text-sm text-muted-foreground leading-tight"><strong>Режим работы:</strong> Пн-Пт 09:00-20:00, Сб 10:00-16:00, Вс 10:00-14:00</p>
               </div>
@@ -30,10 +31,11 @@ const Header = () => {
                 {!isAccessibilityMode && <Phone className="h-4 w-4 flex-shrink-0" />}8 (994) 305 05 05</a>
 
               <div className="flex items-center gap-3">
-                {/* WhatsApp */}
-                <a href="https://wa.me/79943050505" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-green-600 transition-colors whitespace-nowrap">
-                  {!isAccessibilityMode && <MessageCircle className="h-4 w-4 flex-shrink-0 text-green-500" />}WhatsApp</a>
+                {/* MAX */}
+                <a href="https://max.ru/u/f9LHodD0cOJQ6eI2WZyF-SaYJA3j7qG5d0BjL26gFfr1I6Lt2OSpGmTJ_AI" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-blue-600 transition-colors whitespace-nowrap">
+                  {!isAccessibilityMode && <MessageCircle className="h-4 w-4 flex-shrink-0 text-blue-600" />}MAX
+                </a>
 
                 {/* Telegram */}
                 <a href="https://t.me/Esterio_stom" target="_blank" rel="noopener noreferrer"
@@ -60,6 +62,10 @@ const Header = () => {
 
           </div>
         </div>
+        <div className="md:hidden flex items-center justify-center py-2 bg-primary">
+            <img src={logoImage} alt="Логотип" className="h-14 w-auto" />
+        </div>
+
       </header>
       <CallbackModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>

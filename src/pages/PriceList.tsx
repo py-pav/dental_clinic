@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import { useEffect } from "react";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
+
 
 const PriceList = () => {
   useEffect(() => {window.scrollTo(0, 0);}, []);
@@ -32,7 +34,7 @@ const PriceList = () => {
   ];
 
   return (
-    <div className="py-5">
+    <div className="py-5 pb-28">
       <div className="container mx-auto px-4">
         <h1 className="section-title">Прайс-лист</h1>
         
@@ -59,6 +61,7 @@ const PriceList = () => {
           * Окончательная стоимость определяется после консультации врача
         </p>
       </div>
+      <FloatingPhoneButton />
     </div>
   );
 };

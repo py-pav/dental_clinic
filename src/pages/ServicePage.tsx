@@ -11,6 +11,7 @@ import serviceProsthetics from "@/assets/service-prosthetics.jpg";
 import serviceProsthetics2 from "@/assets/service-prosthetics-2.jpg";
 import serviceProsthetics3 from "@/assets/service-prosthetics-3.jpg";
 import serviceProsthetics4 from "@/assets/service-prosthetics-4.jpg";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 
 const ServicePage = () => {
   const { serviceId } = useParams();
@@ -140,7 +141,7 @@ const ServicePage = () => {
   };
 
   return (
-    <div className="py-5">
+    <div className="py-5 pb-28">
       <div className="container mx-auto px-4">
         <h1 className="section-title">{service.name}</h1>
 
@@ -172,6 +173,7 @@ const ServicePage = () => {
           </div>
         </div>
       </div>
+      <FloatingPhoneButton />
     </div>
   );
 };

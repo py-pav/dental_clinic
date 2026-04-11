@@ -1,11 +1,13 @@
 import { MapPin, Phone, Clock, MessageCircle, Send, Mail } from "lucide-react";
 import clinicFacade from "@/assets/front.jpg";
 import { useEffect } from "react";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
+
 
 const Contacts = () => {
   useEffect(() => {window.scrollTo(0, 0);}, []);
   return (
-    <div className="py-5">
+    <div className="py-5 pb-24">
       <div className="container mx-auto px-4">
         <h1 className="section-title">Контакты</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 w-full">
@@ -56,6 +58,10 @@ const Contacts = () => {
               </div>
 
               <div className="flex items-center gap-3 mt-1">
+                 {/* MAX */}
+                <a href="https://max.ru/u/f9LHodD0cOJQ6eI2WZyF-SaYJA3j7qG5d0BjL26gFfr1I6Lt2OSpGmTJ_AI" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-blue-600 transition-colors whitespace-nowrap">
+                  <MessageCircle className="h-4 w-4 flex-shrink-0 text-blue-600" />MAX</a>
                  {/* ВКонтакте */}
                 <a href="https://vk.com/esterio_stom" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-blue-600 transition-colors whitespace-nowrap">
@@ -85,6 +91,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
+      <FloatingPhoneButton />
     </div>
   );
 };

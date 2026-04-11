@@ -9,6 +9,8 @@ import job_reviews7 from "@/assets/job-reviews-7.jpg";
 import job_reviews8 from "@/assets/job-reviews-8.jpg";
 import job_reviews9 from "@/assets/job-reviews-9.jpg";
 import { useEffect } from "react";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
+
 
 const JobReviews = () => {
     useEffect(() => {window.scrollTo(0, 0);}, []);
@@ -34,6 +36,7 @@ const JobReviews = () => {
           />
         </div>
       </div>
+      <FloatingPhoneButton />
     </div>
   );
 };

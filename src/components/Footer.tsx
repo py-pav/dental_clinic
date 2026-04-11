@@ -9,10 +9,10 @@ const Footer = () => {
             <img src={toothLogo} alt="Эстерио" className="h-16 w-auto" />
           </div>
           <div className="text-center md:text-right space-y-2">
-            <p className="text-sm md:text-base">
+            <p className="text-sm md:text-base hidden md:block">
               г. Ставрополь, улица Мира, 460/3
             </p>
-            <p className="text-base md:text-lg font-semibold">
+            <p className="text-base md:text-lg font-semibold hidden md:block">
               8 (994) 305 05 05
             </p>
           </div>

@@ -246,3 +246,19 @@
 .flex.items-center.justify-between.md\\:justify-center > .md\\:hidden {
   margin-left: auto;
 }
+
+/* Пульсирующая анимация для кнопки телефона */
+@keyframes phonePulse {
+  0%, 100% {
+    background-color: hsl(var(--primary));
+    transform: scale(1);
+  }
+  50% {
+    background-color: hsl(28, 21%, 46%);
+    transform: scale(1.02);
+  }
+}
+
+.phone-pulse-animation {
+  animation: phonePulse 2s ease-in-out infinite;
+}

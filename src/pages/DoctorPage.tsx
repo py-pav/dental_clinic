@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { useEffect, useState } from "react";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 
 import doctor1 from "@/assets/doctor-1.jpg";
 import doctor2 from "@/assets/doctor-2.jpg";
@@ -58,7 +59,7 @@ const DoctorPage = () => {
   }
 
   return (
-    <div className="py-12">
+    <div className="py-12 pb-24">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="overflow-hidden h-fit">
@@ -115,6 +116,7 @@ const DoctorPage = () => {
           </div>
         </div>
       </div>
+      <FloatingPhoneButton />
     </div>
   );
 };

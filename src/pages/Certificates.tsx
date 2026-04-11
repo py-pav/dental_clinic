@@ -16,6 +16,8 @@ import certificate14 from "@/assets/certificate-14.jpg";
 import certificate15 from "@/assets/certificate-15.jpg";
 import certificate16 from "@/assets/certificate-16.jpg";
 import { useEffect } from "react";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
+
 
 const Certificates = () => {
     useEffect(() => {window.scrollTo(0, 0);}, []);
@@ -42,6 +44,7 @@ const Certificates = () => {
             interval={60000}
           />
         </div>
+        <FloatingPhoneButton />
       </div>
     </div>
   );

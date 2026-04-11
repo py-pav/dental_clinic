@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Carousel from "@/components/Carousel";
+import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
 import { useAccessibility } from "@/components/AccessibilityContext";
@@ -146,7 +147,7 @@ const Index = () => {
     <div>
       {/* Hero Section */}
     {!isAccessibilityMode &&
-    <section className="relative h-[20vh] md:h-[20vh] flex items-center justify-start">
+    <section className="relative h-[20vh] md:h-[20vh] flex items-center justify-start hidden md:block">
       <div className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
@@ -338,6 +339,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <FloatingPhoneButton />
     </div>
   );
 };
