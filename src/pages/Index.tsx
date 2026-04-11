@@ -21,6 +21,7 @@ import serviceProsthetics from "@/assets/service-prosthetics.jpg";
 import doctor1 from "@/assets/doctor-1.jpg";
 import doctor2 from "@/assets/doctor-2.jpg";
 import doctor3 from "@/assets/doctor-3.jpg";
+import doctor4 from "@/assets/doctor-4.jpg";
 
 const Index = () => {
   const location = useLocation();
@@ -95,10 +96,16 @@ const Index = () => {
       image: doctor2,
     },
     {
-      id: "administrator",
+      id: "administrator_1",
       name: "Софья",
       position: "Администратор",
       image: doctor3,
+    },
+    {
+      id: "administrator_2",
+      name: "Виктория",
+      position: "Администратор",
+      image: doctor4,
     },
   ];
 
@@ -267,53 +274,63 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+                              {/* Team Section */}
       <section id="team" className="py-5 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Наш коллектив</h2>
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
-            {doctors.map((doctor) => (
-              <Card key={doctor.id} className="overflow-hidden hover:shadow-xl transition-shadow">
-                <img
-                  src={doctor.image}
-                  alt={doctor.name}
-                  className="w-full h-80 object-cover"
-                />
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl font-bold">{doctor.name}</h3>
-                  <p className="text-muted-foreground">{doctor.position}</p>
-                    <Link to={`/doctors/${doctor.id}`}>
+          {/* Для веб-версии - карусель с 3 врачами */}
+          <div className="hidden md:block h-[550px]">
+            <Carousel
+              itemsPerView={3}
+              items={doctors.map((doctor) => (
+                <div key={doctor.id} className="flex items-stretch justify-center px-4 h-full">
+                  <Card className="overflow-hidden w-full max-w-sm flex flex-col">
+                    <img
+                      src={doctor.image}
+                      alt={doctor.name}
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="p-6 space-y-3 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold">{doctor.name}</h3>
+                      <p className="text-muted-foreground flex-grow">{doctor.position}</p>
+                      <Link to={`/doctors/${doctor.id}`}>
                         {doctor.id === 'doctor_1' && (
-                            <Button variant="outline" className="w-full mt-4">
-                                Подробнее
-                            </Button>
+                          <Button variant="outline" className="w-full mt-4">
+                            Подробнее
+                          </Button>
                         )}
-                    </Link>
+                      </Link>
+                    </div>
+                  </Card>
                 </div>
-              </Card>
-            ))}
+              ))}
+            />
           </div>
+          {/* Для мобильной версии - карусель с 1 врачом */}
           <div className="md:hidden">
             <Carousel
+              itemsPerView={1}
               items={doctors.map((doctor) => (
-                <Card key={doctor.id} className="overflow-hidden mx-2">
-                  <img
-                    src={doctor.image}
-                    alt={doctor.name}
-                    className="w-full h-80 object-cover"
-                  />
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-xl font-bold">{doctor.name}</h3>
-                    <p className="text-muted-foreground">{doctor.position}</p>
-                        <Link to={`/doctors/${doctor.id}`}>
-                            {doctor.id === 'doctor_1' && (
-                                <Button variant="outline" className="w-full mt-4">
-                                    Подробнее
-                                </Button>
-                            )}
-                        </Link>
-                  </div>
-                </Card>
+                <div key={doctor.id} className="px-2">
+                  <Card className="overflow-hidden">
+                    <img
+                      src={doctor.image}
+                      alt={doctor.name}
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="p-6 space-y-3">
+                      <h3 className="text-xl font-bold">{doctor.name}</h3>
+                      <p className="text-muted-foreground">{doctor.position}</p>
+                      <Link to={`/doctors/${doctor.id}`}>
+                        {doctor.id === 'doctor_1' && (
+                          <Button variant="outline" className="w-full mt-4">
+                            Подробнее
+                          </Button>
+                        )}
+                      </Link>
+                    </div>
+                  </Card>
+                </div>
               ))}
             />
           </div>

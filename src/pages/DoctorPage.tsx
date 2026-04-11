@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import doctor1 from "@/assets/doctor-1.jpg";
 import doctor2 from "@/assets/doctor-2.jpg";
 import doctor3 from "@/assets/doctor-3.jpg";
+import doctor4 from "@/assets/doctor-4.jpg";
 
 const DoctorPage = () => {
   const { doctorId } = useParams();
@@ -42,28 +43,6 @@ const DoctorPage = () => {
       experience: "15 лет практики, более 9000 успешно пролеченных пациентов",
       job_review: "https://prodoctorov.ru/stavropol/vrach/241117-terentev/",
     },
-//     doctor_2: {
-//       name: "ФИО",
-//       position: "Должность",
-//       image: doctor2,
-//       bio: "Биография",
-//       education: [
-//         "Образование 1",
-//         "Образование 2",
-//       ],
-//       experience: "Опыт работы",
-//     },
-//     administrator: {
-//       name: "ФИО",
-//       position: "Должность",
-//       image: doctor3,
-//       bio: "Биография",
-//       education: [
-//         "Образование 1",
-//         "Образование 2",
-//       ],
-//       experience: "Опыт работы",
-//     },
   };
 
   const doctor = doctorId ? doctors[doctorId] : null;
