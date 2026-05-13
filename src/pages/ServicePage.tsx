@@ -2,15 +2,14 @@ import { useParams } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import Carousel from "@/components/Carousel";
 import { useEffect, useState } from "react";
-import serviceTherapy from "@/assets/service-therapy.jpg";
-import serviceTherapy2 from "@/assets/service-therapy-2.jpg";
-import serviceTherapy3 from "@/assets/service-therapy-3.jpg";
-import serviceHygiene from "@/assets/service-hygiene.jpg";
-import serviceImplant from "@/assets/service-implant.jpg";
-import serviceProsthetics from "@/assets/service-prosthetics.jpg";
-import serviceProsthetics2 from "@/assets/service-prosthetics-2.jpg";
-import serviceProsthetics3 from "@/assets/service-prosthetics-3.jpg";
-import serviceProsthetics4 from "@/assets/service-prosthetics-4.jpg";
+import serviceTherapy from "@/assets/services/service-therapy.jpg";
+import serviceTherapy2 from "@/assets/services/service-therapy-2.jpg";
+import serviceTherapy3 from "@/assets/services/service-therapy-3.jpg";
+import serviceHygiene from "@/assets/services/service-hygiene.jpg";
+import serviceProsthetics from "@/assets/services/service-prosthetics.jpg";
+import serviceProsthetics2 from "@/assets/services/service-prosthetics-2.jpg";
+import serviceProsthetics3 from "@/assets/services/service-prosthetics-3.jpg";
+import serviceProsthetics4 from "@/assets/services/service-prosthetics-4.jpg";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 
 const ServicePage = () => {
@@ -51,22 +50,6 @@ const ServicePage = () => {
         "Глубокая чистка с помощью Air Flow (пескоструйная обработка)",
         "Полировка зубов. После удаления камня поверхность зубов полируют для устранения микротрещин и гладкости, что препятствует накоплению налета",
         "Обработка фторсодержащими средствами. Для укрепления эмали и защиты от кариеса применяются специальные гели или лаки",
-      ],
-    },
-    implantation: {
-      name: "Имплантация",
-      image: serviceImplant,
-      description:
-        "В клинике Эстерио мы предлагаем современное решение для восстановления утраченных зубов — имплантацию с использованием передовых технологий. Грамотное планирование расположения имплантанта в цифровом протоколе позволяет добиться высокой точности и предсказуемости результата. Постановка имплантанта с навигацией обеспечивает максимально точное его размещение, что способствует быстрому заживлению и долговечности конструкции. Мы также уделяем особое внимание грамотной работе с мягкими тканями, применяя новейшее оборудование и современные материалы для достижения оптимальных эстетических и функциональных результатов. Наши специалисты обеспечивают комфорт и безопасность на всех этапах процедуры, создавая улыбку вашей мечты.",
-      stages: "Этапы имплантации:",
-      features: [
-        "Подготовка к имплантации (санация полости рта)",
-        "КЛКТ (конусно-лучевая компьютерная томография)",
-        "Сканирование челюстей",
-        "Планирование и изготовление шаблона для имплантации",
-        "Имплантация",
-        "Временное протезирование на импланте",
-        "Постоянное протезирование на импланте",
       ],
     },
     prosthetics: {

@@ -1,13 +1,13 @@
 import Carousel from "@/components/Carousel";
-import job_reviews1 from "@/assets/job-reviews-1.jpg";
-import job_reviews2 from "@/assets/job-reviews-2.jpg";
-import job_reviews3 from "@/assets/job-reviews-3.jpg";
-import job_reviews4 from "@/assets/job-reviews-4.jpg";
-import job_reviews5 from "@/assets/job-reviews-5.jpg";
-import job_reviews6 from "@/assets/job-reviews-6.jpg";
-import job_reviews7 from "@/assets/job-reviews-7.jpg";
-import job_reviews8 from "@/assets/job-reviews-8.jpg";
-import job_reviews9 from "@/assets/job-reviews-9.jpg";
+import job_reviews1 from "@/assets/job-reviews/job-reviews-1.jpg";
+import job_reviews2 from "@/assets/job-reviews/job-reviews-2.jpg";
+import job_reviews3 from "@/assets/job-reviews/job-reviews-3.jpg";
+import job_reviews4 from "@/assets/job-reviews/job-reviews-4.jpg";
+import job_reviews5 from "@/assets/job-reviews/job-reviews-5.jpg";
+import job_reviews6 from "@/assets/job-reviews/job-reviews-6.jpg";
+import job_reviews7 from "@/assets/job-reviews/job-reviews-7.jpg";
+import job_reviews8 from "@/assets/job-reviews/job-reviews-8.jpg";
+import job_reviews9 from "@/assets/job-reviews/job-reviews-9.jpg";
 import { useEffect } from "react";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 

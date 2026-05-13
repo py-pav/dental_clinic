@@ -30,9 +30,9 @@ const Navigation = () => {
   };
 
   const services = [
+    { name: "Имплантация", path: "/services/implantation" },
     { name: "Терапия", path: "/services/therapy" },
     { name: "Профгигиена", path: "/services/hygiene" },
-    { name: "Имплантация", path: "/services/implantation" },
     { name: "Протезирование", path: "/services/prosthetics" },
   ];
 

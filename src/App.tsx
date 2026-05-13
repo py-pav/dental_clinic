@@ -10,6 +10,7 @@ import Certificates from "./pages/Certificates";
 import JobReviews from "./pages/JobReviews";
 import Licenses from "./pages/Licenses";
 import ServicePage from "./pages/ServicePage";
+import ImplantPage from "./pages/ImplantPage";
 import DoctorPage from "./pages/DoctorPage";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/certificates" element={<Certificates />} />
               <Route path="/job_reviews" element={<JobReviews />} />
               <Route path="/licenses" element={<Licenses />} />
+              <Route path="/services/implantation" element={<ImplantPage />} />
               <Route path="/services/:serviceId" element={<ServicePage />} />
               <Route path="/doctors/:doctorId" element={<DoctorPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

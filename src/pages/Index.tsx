@@ -8,21 +8,21 @@ import { useEffect } from "react";
 import { useAccessibility } from "@/components/AccessibilityContext";
 import heroImage from "@/assets/hero-dental.jpg";
 import logoImage from "@/assets/logo-image.png";
-import clinicInterior1 from "@/assets/clinic-interior-1.jpg";
-import clinicInterior2 from "@/assets/clinic-interior-2.jpg";
-import clinicInterior3 from "@/assets/clinic-interior-3.jpg";
-import clinicInterior4 from "@/assets/clinic-interior-4.jpg";
-import clinicInterior5 from "@/assets/clinic-interior-5.jpg";
-import clinicInterior6 from "@/assets/clinic-interior-6.jpg";
-import clinicInterior7 from "@/assets/clinic-interior-7.jpg";
-import serviceTherapy from "@/assets/service-therapy.jpg";
-import serviceHygiene from "@/assets/service-hygiene.jpg";
-import serviceImplant from "@/assets/service-implant.jpg";
-import serviceProsthetics from "@/assets/service-prosthetics.jpg";
-import doctor1 from "@/assets/doctor-1.jpg";
-import doctor2 from "@/assets/doctor-2.jpg";
-import doctor3 from "@/assets/doctor-3.jpg";
-import doctor4 from "@/assets/doctor-4.jpg";
+import clinicInterior1 from "@/assets/clinic-interior/clinic-interior-1.jpg";
+import clinicInterior2 from "@/assets/clinic-interior/clinic-interior-2.jpg";
+import clinicInterior3 from "@/assets/clinic-interior/clinic-interior-3.jpg";
+import clinicInterior4 from "@/assets/clinic-interior/clinic-interior-4.jpg";
+import clinicInterior5 from "@/assets/clinic-interior/clinic-interior-5.jpg";
+import clinicInterior6 from "@/assets/clinic-interior/clinic-interior-6.jpg";
+import clinicInterior7 from "@/assets/clinic-interior/clinic-interior-7.jpg";
+import serviceImplant from "@/assets/services/service-implant.jpg";
+import serviceTherapy from "@/assets/services/service-therapy.jpg";
+import serviceHygiene from "@/assets/services/service-hygiene.jpg";
+import serviceProsthetics from "@/assets/services/service-prosthetics.jpg";
+import doctor1 from "@/assets/doctors/doctor-1.jpg";
+import doctor2 from "@/assets/doctors/doctor-2.jpg";
+import doctor3 from "@/assets/doctors/doctor-3.jpg";
+import doctor4 from "@/assets/doctors/doctor-4.jpg";
 
 const Index = () => {
   const location = useLocation();
@@ -62,6 +62,11 @@ const Index = () => {
 
   const services = [
     {
+      id: "implantation",
+      name: "Имплантация",
+      image: serviceImplant,
+    },
+    {
       id: "therapy",
       name: "Терапия",
       image: serviceTherapy,
@@ -70,11 +75,6 @@ const Index = () => {
       id: "hygiene",
       name: "Профессиональная гигиена",
       image: serviceHygiene,
-    },
-    {
-      id: "implantation",
-      name: "Имплантация",
-      image: serviceImplant,
     },
     {
       id: "prosthetics",
@@ -275,7 +275,7 @@ const Index = () => {
         </div>
       </section>
 
-                              {/* Team Section */}
+      {/* Team Section */}
       <section id="team" className="py-5 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Наш коллектив</h2>
