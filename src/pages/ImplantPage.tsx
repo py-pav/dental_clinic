@@ -115,7 +115,7 @@ const toggleDropdown = (id: string) => {
       <div className="container mx-auto px-4 mb-0 max-md:mb-8 lg:mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="relative overflow-hidden rounded-2xl flex items-center">
-            <img src={serviceImplantTrust} alt="Почему доверяют именно нам" className="w-full h-auto max-h-[400px] object-contain"/>
+            <img src={serviceImplantTrust} alt="Почему доверяют именно нам" className="w-full h-auto object-contain"/>
           </div>
           <div className="space-y-1 flex-1 flex flex-col justify-center">
             <h2 className="section-title mt-10 max-md:mt-4">Почему доверяют именно нам:</h2>
@@ -206,7 +206,7 @@ const toggleDropdown = (id: string) => {
       <div className="container mx-auto px-4 mb-0 lg:mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="relative overflow-hidden rounded-2xl flex justify-center order-2 lg:order-1">
-            <img src={implant3D} alt="Почему важно использовать 3D-шаблон" className="w-full h-auto max-h-[400px] object-contain"/>
+            <img src={implant3D} alt="Почему важно использовать 3D-шаблон" className="w-full h-auto object-contain"/>
           </div>
           <div className="space-y-1 flex-1 order-1 lg:order-2 flex flex-col justify-center">
             <h2 className="section-title mt-10">Почему важно использовать 3D-шаблон</h2>
