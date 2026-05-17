@@ -9,7 +9,7 @@ import Carousel from "@/components/Carousel";
 import checkIcon from "@/assets/icons/check_icon.png";
 import implantMini from "@/assets/services/implant-mini.jpg";
 import serviceImplantHero from "@/assets/services/service-implant-hero.jpg";
-import serviceImplantProcess from "@/assets/services/implant-process.png";
+import serviceImplantProcess from "@/assets/services/service-implant-process.png";
 import serviceImplantTrust from "@/assets/services/implant-trust.jpg";
 import implantImmediate from "@/assets/services/implant-immediate.jpg";
 import implantDelayed from "@/assets/services/implant-delayed.jpg";
@@ -66,14 +66,14 @@ const toggleDropdown = (id: string) => {
   return (
     <div className="py-5 pb-28">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-0 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 lg:mb-16">
           <div className="flex flex-col justify-start order-2 lg:order-1">
-              <h2 className="section-title text-left mt-10">Имплантация зубов <br />в Ставрополе от 5100 руб/мес*</h2>
-              <div className="flex gap-3 mb-16 mt-10">
+              <h2 className="section-title text-left mt-10 max-md:mt-6">Имплантация зубов <br />в Ставрополе от 5100 руб/мес*</h2>
+              <div className="flex gap-3 mb-16 max-md:mb-6 mt-10 max-md:mt-6">
                 <div className="flex-shrink-0 self-center hidden md:block">
                   <img src={implantMini} alt="Имплантация" className="w-32 h-32 rounded-full object-cover"/>
                 </div>
-                <div className="space-y-1 flex-1">
+                <div className="space-y-1 flex-1 ">
                   <BenefitCard icon={checkIcon} title="Цифровое планирование" />
                   <BenefitCard icon={checkIcon} title="Имплантация с навигацией (с 3D шаблоном)" />
                   <BenefitCard icon={checkIcon} title="Быстрая и безопасная установка" />
@@ -97,28 +97,28 @@ const toggleDropdown = (id: string) => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-0 lg:mb-16">
-          <div className="space-y-1 flex-1 flex flex-col justify-center">
-            <h2 className="section-title mt-10">Что такое имплантация?</h2>
+      <div className="container mx-auto px-4 mb-0 max-md:mb-8 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-1 flex-1 flex flex-col justify-center order-2 lg:order-1">
+            <h2 className="section-title -mt-2">Что такое имплантация?</h2>
             <p className="text-lg leading-relaxed mt-10"><strong>Имплантация</strong> — это современный метод восстановления
             утраченных зубов с помощью установки искусственных корней (имплантов) в челюстную кость. Имплант
             представляет собой титановый или циркониевый стержень, который вживляется в кость и служит опорой для
             будущей коронки, моста или протеза.</p>
           </div>
-          <div className="relative overflow-hidden rounded-2xl flex justify-center">
+          <div className="relative overflow-hidden rounded-2xl flex justify-center order-1 lg:order-2">
             <img src={serviceImplantProcess} alt="Что такое имплантация" className="h-auto object-contain"/>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-0 lg:mb-16">
-          <div className="relative overflow-hidden rounded-2xl flex items-center order-2 lg:order-1">
+      <div className="container mx-auto px-4 mb-0 max-md:mb-8 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="relative overflow-hidden rounded-2xl flex items-center">
             <img src={serviceImplantTrust} alt="Почему доверяют именно нам" className="w-full h-auto max-h-[400px] object-contain"/>
           </div>
-          <div className="space-y-1 flex-1 order-1 lg:order-2 flex flex-col justify-center">
-            <h2 className="section-title mt-10">Почему доверяют именно нам:</h2>
+          <div className="space-y-1 flex-1 flex flex-col justify-center">
+            <h2 className="section-title mt-10 max-md:mt-4">Почему доверяют именно нам:</h2>
             <TrustItem text="Опыт в стоматологии более 16 лет" />
             <TrustItem text="Цифровое планирование постановки импланта и дальнейшего протезирования" />
             <TrustItem text="Использование самого высокоточного внутриротового сканера в мире (Prime Scan)" />
@@ -130,9 +130,9 @@ const toggleDropdown = (id: string) => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-0 lg:mb-16">
         <h2 className="section-title mt-10">Виды имплантации:</h2>
-        <div className="hidden md:grid md:grid-cols-3 gap-6   mb-0 lg:mb-16">
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
             {services.map((service) => (
               <Card key={service.id} className="overflow-hidden group hover:shadow-xl transition-shadow">
                 <div className="relative h-[400px]">
@@ -203,8 +203,8 @@ const toggleDropdown = (id: string) => {
         </div>
       )}
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-0 lg:mb-16">
+      <div className="container mx-auto px-4 mb-0 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="relative overflow-hidden rounded-2xl flex justify-center order-2 lg:order-1">
             <img src={implant3D} alt="Почему важно использовать 3D-шаблон" className="w-full h-auto max-h-[400px] object-contain"/>
           </div>
@@ -220,8 +220,8 @@ const toggleDropdown = (id: string) => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-0 lg:mb-16">
+      <div className="container mx-auto px-4 mb-0 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-1 flex-1 flex flex-col justify-center">
             <h1 className="section-title mt-10">Терентьев Олег Анатольевич</h1>
             <TrustItem text="Главный врач, cтоматолог-терапевт, стоматолог-ортопед, стоматолог-хирург-имплантолог" />
@@ -267,8 +267,8 @@ const CallButton = () => (
 )
 
 const TrustItem = ({ text }: { text: string }) => (
-  <div className="flex items-center gap-2">
-    <span className="text-primary text-xl">•</span>
+  <div className="flex gap-2">
+    <span className="text-primary text-xl mt-1 leading-none">•</span>
     <span className="text-lg leading-relaxed">{text}</span>
   </div>
 );
